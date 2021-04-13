@@ -1,0 +1,321 @@
+$base-color: #00459e
+$error-color: #dd2121
+$radius: 4px
+
+*
+    font-family: 'Poppins', sans-serif
+
+.auth
+    min-height: 100vh
+    background: url('../images/bg/auth_page.svg') center (center/cover) no-repeat
+    .container
+        padding-top: 100px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+    &_title
+        font-size: 50px;
+        font-weight: 300;
+        text-transform: uppercase;
+        color: #ffffff;
+        margin-bottom: 2rem
+        transition: all 1s ease
+    &_forms
+        width: 400px
+        max-width: 400px
+        padding: 1rem
+        box-shadow: 0 0 40px rgba(0, 0, 0, 0.2)
+        border-radius: $radius
+        background: rgba(221, 221, 221, 0.7)
+        .form--hidden
+            display: none
+        .form > *:first-child
+            margin-top: 0px
+        .form > *:last-child
+            margin-bottom: 0px
+        .form__title
+            text-align: center
+            text-transform: uppercase
+        .form__message
+            text-align: center
+            margin-bottom: 1rem
+            &--success
+                color: $base-color
+            &--error
+                color: $error-color
+        .form__input--group
+            margin-bottom: 1rem
+        .form__input
+            display: block
+            width: 100%
+            padding: 0.4rem
+            box-sizing: border-box
+            border-radius: $radius
+            border: 1px solid #dddddd
+            background: #eeeeee
+            outline: none
+            transition: background 0.2s, border-color 0.2s
+            &:focus
+                border-color: $base-color
+                background: #ffffff
+            &--error
+                color: $error-color
+                border-color: $error-color
+            &-error-message
+                margin-top: 0.5rem
+                font-size: 0.85rem
+                color: $error-color
+        .form__button
+            width: 100%
+            height: 40px
+            padding: 0.4rem 2rem
+            display: block
+            margin: 0 auto
+            font-weight: 700
+            font-size: 1rem
+            border: none
+            color: #ffffff
+            border-radius: $radius
+            outline: none
+            cursor: pointer
+            background: $base-color
+            transition: background 0.7s, color 0.7s
+            box-shadow: 4px 4px 8px 0px rgba(34, 60, 80, 0.2)
+            &:hover
+                color: $base-color
+                background: #ffffff
+            &:active
+                transform: scale(0.98)
+        .form__text
+            text-align: center
+            margin-top: 1rem
+        .form__link
+            color: $base-color
+            cursor: pointer
+            text-decoration: none
+            &:hover
+                text-decoration: underline
+
+.main
+    background: url('../images/bg/auth_page.svg') center (center/cover) no-repeat
+    min-height: 100vh
+    display: none
+    padding-top: 20px
+    position: relative
+    .navbar
+        width: 300px
+        height: 100%
+        position: fixed
+        top: 0
+        left: -300px
+        background-color: #fefbd8
+        display: flex
+        justify-content: center
+        align-items: center
+        border-radius: 0 15% 15% 0
+        transition: left 0.8s cubic-bezier(1, 0, 0, 1)
+        .hamburger_menu
+            width: 35px
+            height: 30px
+            position: fixed
+            top: 50px
+            left: 50px
+            cursor: pointer
+            display: flex
+            flex-direction: column
+            justify-content: space-around
+            .line
+                width: 100%
+                height: 3px
+                background-color: #3e4444
+                transition: all 0.5s
+        .nav_list
+            list-style: none
+            width: 100%
+            padding-left: 25px
+            margin-bottom: 0
+            text-align: left
+            .nav_item
+                margin: 25px
+                .nav_link
+                    text-decoration: none
+                    font-size: 25px
+                    color: $base-color
+                    font-weight: 300
+                    letter-spacing: 0.5px
+                    text-transform: uppercase
+                    position: relative
+                    &::before,
+                    &::after
+                        content: ''
+                        width: 100%
+                        height: 2px
+                        background-color: #3e4444
+                        position: absolute
+                        left: 0
+                        transform: scaleX(0)
+                        transition: transform 0.5s
+                    &::after
+                        bottom: 0
+                        transform-origin: right
+                    &::before
+                        top: 0
+                        transform-origin: left
+                .nav_link:hover::before,
+                .nav_link:hover::after
+                        transform: scaleX(1)
+    .change
+        left: 0
+    .change .line-1
+        transform: rotateZ(-45deg) translate(-8px, 6px)
+    .change .line-2
+        opacity: 0
+    .change .line-3
+        transform: rotateZ(45deg) translate(-8px, -6px)
+
+    .greet_name
+        display: flex
+        justify-content: center
+        text-align: center
+        color: #fefbd8
+        font-size: 3rem;
+        font-weight: 300;
+    
+    .todo_elements
+        display: flex
+        justify-content: center
+        align-items: center
+        flex-direction: column
+        margin-top: 2rem
+        form
+            display: flex
+            justify-content: center
+            align-items: center
+            min-height: 20vh
+        form input,
+        form button
+            padding: 1rem
+            font-size: 1.5rem
+            border: none
+            background: #fefbd8
+            outline: none
+        form button
+            color: #00459e
+            background: #fefbd8
+            cursor: pointer
+            transition: all 0.3s ease
+            &:hover
+                background: #00459e
+                color: #fefbd8
+        .todo_container
+            display: flex
+            justify-content: center
+            align-items: center
+            width: 100%
+            .todo_list
+                min-width: 40%
+                list-style: none
+                padding-left: 0
+                .todo
+                    margin: 0.5rem
+                    background: white
+                    color: black
+                    font-size: 1.5rem
+                    display: flex
+                    justify-content: space-between
+                    align-items: center
+                    transition: all 0.5s ease
+                    .todo li
+                        flex: 1
+                    .delete_button
+                        background: #fefbd8
+                        color: $base-color
+                        border: none
+                        padding: 1rem
+                        cursor: pointer
+                        font-size: 1rem
+                        transition: all 0.3 ease
+                        .fa-trash
+                            pointer-events: none
+                        &:hover
+                          background: $base-color
+                          color: #fefbd8
+
+                    .todo_item
+                        padding: 0rem 0.5rem
+
+                .fall
+                    transform: translateY(8rem) translateX(8rem) rotateZ(360deg)
+                    opacity: 0
+
+.profile
+    min-height: 100vh
+    background: url('../images/bg/auth_page.svg') center (center/cover) no-repeat
+    display: none
+    padding-top: 80px
+    .profile_card
+        margin: 0 auto
+        background: #fefbd8
+        width: 30%
+        height: 60vh
+        border-radius: $radius
+        box-shadow: 0 1px 10px 1px #000
+        .upper_part
+            height: 40%
+            background: $base-color
+            display: flex
+            flex-direction: column
+            align-items: center
+            justify-content: center
+            .profile_avatar
+                display: flex
+                justify-content: center
+                align-items: center
+                font-size: 40px
+                width: 100px
+                height: 100px
+                border-radius: 100%
+                background: #fefbd8
+                color: #3e4444
+            .profile_name
+                color: #fefbd8
+                text-transform: uppercase
+                margin-top: 10px
+        .lower_part
+            height: 60%
+            display: flex
+            flex-direction: column
+            justify-content: space-between
+            align-items: center
+            background: rgba(221, 221, 221, 0.7)
+            .profile_header
+                margin-top: 10px
+            .profile_info
+                overflow: hidden
+                width: 100%
+                text-align: center
+            .back
+                margin-bottom: 10px
+                width: 200px
+                height: 40px
+                border: 1px solid black
+                background: $base-color
+                text-align: center
+                color: #fefbd8
+                border: none
+                font-size: 13px
+                text-transform: uppercase
+                transition: all 0.3s ease
+                border-radius: 10px
+                cursor: pointer
+                &:hover
+                    background: #fefbd8
+                    color: $base-color
+
+
+
+
+
+
+            
